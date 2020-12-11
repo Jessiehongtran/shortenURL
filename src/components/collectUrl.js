@@ -62,13 +62,16 @@ export default class CollectUrl extends React.Component {
 
   render(){
     return (
-      <div>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '100px'}}>
         <input 
-          style={{width: '500px', height: '50px'}}
+          style={{width: '500px', height: '50px', marginRight: '20px', paddingLeft: '20px', fontSize: '16px'}}
           placeholder="Enter your url"
           onChange={this.handleChange}
         />
-        <button onClick={() => this.submitUrl()}>Shorten URL</button>
+        <button 
+            onClick={() => this.submitUrl()}
+            style={{ height: '50px', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '6px', padding: '10px', fontSize: '20px'}}
+        >Shorten URL</button>
         {this.state.shortenedUrl.length > 0
         ? <p>Your shortened url is <a href={this.state.shortenedUrl}>{this.state.shortenedUrl}</a> </p>
         : null}
